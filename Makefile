@@ -13,3 +13,6 @@ test:
 
 ci: test
 	@coverage html
+
+collectstatics:
+	./manage.py collectstatic --noinput

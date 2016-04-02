@@ -1,0 +1,1 @@
+web: gunicorn teach_to_the_cards.wsgi --log-file -
