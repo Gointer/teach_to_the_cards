@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from card.views import CardListView, CardCreateView
 
 urlpatterns = [
 	url(r'^$', CardListView.as_view(), name='card-list'),
 	url(r'^new/$', CardCreateView.as_view(), name='new'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

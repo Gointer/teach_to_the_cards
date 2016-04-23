@@ -1,0 +1,21 @@
+{
+  "name": "teach_to_the_cards",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Vitalii <gointer@ukr.net>"
+  ],
+  "license": "BSD",
+  "homepage": "https://github.com/Gointer/teach_to_the_cards",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6"
+  }
+}

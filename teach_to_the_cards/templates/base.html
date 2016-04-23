@@ -1,13 +1,31 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 
 <html>
 <head>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'lib/Materialize/dist/css/materialize.min.css' %}">
+
 	<title></title>
 </head>
 <body>
 	
+	<header>
+		<nav class="light-green darken-2 z-depth-0">
+			<div class="nav-wrapper">
+				<ul class="left">
+					<li><a href="{% url 'card-list' %}">Home</a></li>
+					<li><a href="{% url 'new' %}">Create</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
 	{% block content %} 
 	{% endblock %}
 
+	<script type="text/javascript" src="{% static 'lib/jquery/dist/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'lib/Materialize/dist/js/materialize.min.js' %}"></script>
+	
 </body>
 </html>
