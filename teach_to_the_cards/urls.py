@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from card.views import CardListView, CardCreateView
+from card.views import CardListView, CardCreateView, CardDeleteView, CardUpdateView
 
 urlpatterns = [
 	url(r'^$', CardListView.as_view(), name='card-list'),
-	url(r'^new/$', CardCreateView.as_view(), name='new'),
+	url(r'^new$', CardCreateView.as_view(), name='new'),
+	url(r'^delete/(?P<pk>\d+)$', CardDeleteView.as_view(), name='delete'),
+	url(r'^update/(?P<pk>\d+)$', CardUpdateView.as_view(), name='update'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

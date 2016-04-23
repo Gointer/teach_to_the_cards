@@ -6,6 +6,7 @@
 		<tr>
 			<th>Question</th>
 			<th>Answer</th>
+			<th>Tools</th>
 		</tr>
 	</thead>
 
@@ -14,6 +15,7 @@
 			<tr>	
 				<td>{{ card.question }}</td>
 				<td>{{ card.answer }}</td>
+				<td><a href="{% url 'delete' pk=card.id %}">Delete</a>|<a href="{% url 'update' pk=card.id %}">Update</a></td>
 			</tr>
 		{% endfor %}
 	</tbody>

@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .models import Card
 
@@ -13,5 +13,18 @@ class CardListView(ListView):
 class CardCreateView(CreateView):
 	model = Card
 	template_name = 'create_card.html'
-	success_url = '/'
+	success_url = reverse_lazy('card-list')
+	fields = ['question', 'answer']
+
+
+class CardDeleteView(DeleteView):
+	model = Card
+	template_name = 'delete_card.html'
+	success_url = reverse_lazy('card-list')
+
+
+class CardUpdateView(UpdateView):
+	model = Card
+	template_name = 'update_card.html'
+	success_url = reverse_lazy('card-list')	
 	fields = ['question', 'answer']
