@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from card.views import CardListView, CardCreateView
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+	url(r'^$', CardListView.as_view(), name='card-list'),
+	url(r'^new/$', CardCreateView.as_view(), name='new'),
 ]

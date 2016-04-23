@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<ul>
+	{% for card in object_list %}
+		<li>{{ card.question }}--{{ card.answer }}</li>
+	{% empty %}
+		<li>No card yet.</li>
+	{% endfor %}
+</ul>
+{% endblock %}
