@@ -7,6 +7,7 @@
 			<th>Question</th>
 			<th>Answer</th>
 			<th>Description</th>
+			<th>Created</th>
 			<th>Tools</th>
 		</tr>
 	</thead>
@@ -17,6 +18,7 @@
 				<td><a href="{% url 'card:detail' pk=card.id %}">{{ card.question|truncatechars:50 }}</a></td>
 				<td>{{ card.answer|truncatechars:50 }}</td>
 				<td>{{ card.description|truncatechars:50 }}</td>
+				<td>{{ card.created }}</td>
 				<td><a href="{% url 'card:delete' pk=card.id %}">Delete</a>|<a href="{% url 'card:update' pk=card.id %}">Update</a></td>
 			</tr>
 		{% endfor %}

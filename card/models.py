@@ -6,6 +6,7 @@ class Card(models.Model):
 	question = models.TextField(unique=True)
 	answer = models.TextField()
 	description = models.TextField(blank=True)
+	created = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
 		return self.question
