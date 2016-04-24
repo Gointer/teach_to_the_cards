@@ -15,7 +15,7 @@ class CardCreateView(CreateView):
 	model = Card
 	template_name = 'create_card.html'
 	success_url = reverse_lazy('card:list')
-	fields = ['question', 'answer']
+	fields = ['question', 'answer', 'description',]
 
 
 class CardDeleteView(DeleteView):
@@ -28,7 +28,7 @@ class CardUpdateView(UpdateView):
 	model = Card
 	template_name = 'update_card.html'
 	success_url = reverse_lazy('card:list')	
-	fields = ['question', 'answer']
+	fields = ['question', 'answer', 'description',]
 
 
 class CardDetailView(DetailView):
