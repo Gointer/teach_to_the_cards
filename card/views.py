@@ -1,5 +1,6 @@
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .models import Card
@@ -28,3 +29,9 @@ class CardUpdateView(UpdateView):
 	template_name = 'update_card.html'
 	success_url = reverse_lazy('card-list')	
 	fields = ['question', 'answer']
+
+
+class CardDetailView(DeleteView):
+	model = Card
+	template_name = 'detail_card.html'
+	context_object_name = 'card'
