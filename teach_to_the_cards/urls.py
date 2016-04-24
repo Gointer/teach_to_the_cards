@@ -13,8 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from django.contrib import admin
+from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,9 +23,6 @@ from card.views import (
 )
 
 urlpatterns = [
-	url(r'^$', CardListView.as_view(), name='card-list'),
-	url(r'^new$', CardCreateView.as_view(), name='new'),
-	url(r'^delete/(?P<pk>\d+)$', CardDeleteView.as_view(), name='delete'),
-	url(r'^update/(?P<pk>\d+)$', CardUpdateView.as_view(), name='update'),
-    url(r'^(?P<pk>\d+)$', CardDetailView.as_view(), name='detail'),
+    url(r'^', include('card.urls', namespace='card')),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

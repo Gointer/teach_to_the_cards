@@ -10,4 +10,4 @@ class Card(models.Model):
 		return self.question
 
 	def get_absolute_url(self):
-		return reverse('detail', args=[self.id])
+		return reverse('card:detail', args=[self.id])
